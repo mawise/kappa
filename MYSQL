@@ -1,0 +1,11 @@
+CREATE SCHEMA `aggregates` DEFAULT CHARACTER SET latin1 COLLATE latin1_bin ;
+
+CREATE TABLE `twitter` (
+  `start_offset` bigint(8) NOT NULL,
+  `end_offset` bigint(8) NOT NULL,
+  `timestamp` datetime NOT NULL,
+  `partition_id` int(11) NOT NULL,
+  `count` int(11) NOT NULL,
+  PRIMARY KEY (`start_offset`,`end_offset`,`timestamp`,`partition_id`)
+) ENGINE=InnoDB DEFAULT CHARSET=latin1 COLLATE=latin1_bin;
+

@@ -1,5 +1,8 @@
 apply plugin: 'java'
 apply plugin: 'idea'
+apply plugin: 'application'
+
+mainClassName = "com.matt_wise.kappa.KafkaExactlyOnce"
 
 repositories {
     mavenCentral()
@@ -7,7 +10,10 @@ repositories {
 dependencies {
     compile 'org.apache.spark:spark-core_2.10:1.6.1'
     compile 'org.apache.spark:spark-sql_2.10:1.6.1'
+    compile 'org.apache.spark:spark-streaming_2.10:1.6.1'
     compile 'org.apache.spark:spark-streaming-kafka_2.10:1.6.1'
+
+    compile group: 'mysql', name: 'mysql-connector-java', version: '5.1.39'
 
     testCompile 'org.testng:testng:6.9.10'
 }
